@@ -1,6 +1,12 @@
 #!/bin/bash
 # https://github.com/subhh/HOS-ContentIndexing
 
+# required credentials - PLEASE SPECIFY
+
+# $solr_credentials for curl, e.g. -u myusername:mypassword
+# $solr_url, e.g. https://solr.mydomain.info/solr/CORENAME/
+
+
 # change directory to location of shell script
 cd $(dirname $0)
 
@@ -86,8 +92,13 @@ mv $fulltext_dir/*_esc $upload_dir
 rename s/_esc\//i $upload_dir/*
 
 # curl them to the index TODO
+for i in $upload_dir/*
+do
+	curl $solr_credentials -sS "${solr_url}/update?commit=true" --data-binary @- -H 'Content-type:application/json; charset=utf-8' < $i
+done
 
 # clean the pdf documents
 rm $pdf_dir/*
 
 # clean the atomic update scripts
+rm $upload_dir/*

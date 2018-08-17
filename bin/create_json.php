@@ -4,7 +4,7 @@
 
  $text = json_encode(file_get_contents($argv[1]));
 
- $json = ' [ {"id" : "' . $id . '", "fulltext" : {"set":"' . $text . '", "} } ] ';
+ $json = ' [ {"id" : "' . $id . '", "fulltext" : {"set":' . $text . '} } ] ';
 
  file_put_contents ( $argv[2], $json);
 
