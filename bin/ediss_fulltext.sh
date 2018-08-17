@@ -16,11 +16,11 @@ upload_dir="$(readlink -f ../data/ediss/upload)"
 #log_dir="$(readlink -f ../log)"
 
 #  executables
-tica_jar="$opt_dir/tika-app-1.17.jar"
+tica_jar="$opt_dir/tika-app-1.18.jar"
 create_json="$bin_dir/create_json.php"
 
 # filenames
-targets_file="$metadata_dir/links_to_documentstsv"
+targets_file="$metadata_dir/links_to_documents.tsv"
 
 
 # check for executables
