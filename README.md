@@ -8,7 +8,7 @@ A few scripts to insert document contents into SOLR indices built by HOS-Metadat
 
 ## Installation
 * Check out the repository to a convenient location
-* Apache Tika is needed as a jar-File. Please copy a version of tika-app-1.17.jar to the opt-directory. If you use another version than tika 1.17, please feel free to modify the shell scripts in bin to allow other versions
+* Apache Tika is needed as a jar-File. Please copy a version of tika-app-1.18.jar to the opt-directory. If you use another version than tika 1.18, please feel free to modify the shell scripts in bin to allow other versions
 * configure your shell environment to hold the credentials for your SOLR-system
 
 ## How to use
