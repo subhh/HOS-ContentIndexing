@@ -82,12 +82,16 @@ java -jar "$tica_jar" --text --inputDir "$pdf_dir" --outputDir "$fulltext_dir"
 # remove file suffixes
 rename s/\.pdf\.txt//i $fulltext_dir/*
 
-# create atomic update scripts TODO
+# make sure that atomic update folder is empty
+rm $upload_dir/*
+
+# create atomic update scripts
 for i in $fulltext_dir/*
 do
 	php $create_json $i "${i}_esc";
 done
 
+# move atomic update scripts to upload folder
 mv $fulltext_dir/*_esc $upload_dir
 rename s/_esc\//i $upload_dir/*
 
